@@ -3,15 +3,16 @@
 <kickstart>
 
 <description>
-PHYLOBAYES
+PHYLOBAYES - http://www.phylobayes.org
 </description>
 
 <copyright>
-Copyright (c) 2000 - 2011 The Regents of the University of California.
+Copyright (c) 2000 - 2014 The Regents of the University of California.
 All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 </copyright>
 
-<package>phylobayes-mpi_ROLLCOMPILER_ROLLMPI_ROLLNETWORK</package>
+<package>phylobayes-mpi_COMPILERNAME_MPINAME</package>
 <package>phylobayes-modules</package>
+<package>phylobayes-roll-test</package>
 
 </kickstart>
