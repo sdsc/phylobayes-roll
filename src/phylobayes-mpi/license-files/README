@@ -1,0 +1,18 @@
+
+
+/********************
+
+PhyloBayes MPI. Copyright 2010-2013 Nicolas Lartillot, Nicolas Rodrigue, Daniel Stubbs, Jacques Richer.
+
+PhyloBayes is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+PhyloBayes is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License
+along with PhyloBayes. If not, see <http://www.gnu.org/licenses/>.
+
+**********************/
+
+PhyloBayes MPI is provided both as executable files (for linux x86-64) and as a C++ source code. Depending on the operating system running on your cluster, you may need to recompile the code. To this end, a simple Makefile is provided in the sources directory, and compiling with the make command should then work in most simple situations, assuming that a version of MPI compatible with C++ compilation (with a mpicxx/mpic++ executable) is already installed on your cluster. Note that, in some machines, OpenMPI needs to be specifically uploaded by the user before compiling and/or running a MPI program. You may need to check all these details with your system administrator. The present code can run in principle on MacOSX or Windows operating systems, however, it is primarily intended for (and has been exclusively tested on) high performance computing facilities operating under linux or Unix.
+

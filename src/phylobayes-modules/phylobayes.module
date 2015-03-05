@@ -1,3 +1,9 @@
 #%Module1.0
+module-whatis "phylobayes"
+module-whatis "Version: VERSION"
+module-whatis "Description: phylobayes"
+module-whatis "Compiler: ROLLCOMPILER"
+module-whatis "MPI Flavors: ROLLMPI"
 setenv PHYLOBAYESHOME /opt/phylobayes
 prepend-path PATH /opt/phylobayes/bin
+module load ROLLCOMPILER ROLLMPI

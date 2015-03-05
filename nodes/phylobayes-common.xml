@@ -11,8 +11,8 @@ Copyright (c) 2000 - 2014 The Regents of the University of California.
 All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 </copyright>
 
-<package>phylobayes-mpi_COMPILERNAME_MPINAME</package>
-<package>phylobayes-modules</package>
-<package>phylobayes-roll-test</package>
+<package>sdsc-phylobayes-mpi</package>
+<package>sdsc-phylobayes-modules</package>
+<package>sdsc-phylobayes-roll-test</package>
 
 </kickstart>
