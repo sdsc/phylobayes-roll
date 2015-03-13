@@ -79,7 +79,7 @@ build: $(SRC_DIRS)
 	  $(MODULE_LOAD_MPI); \
 	  cd $(SOURCE_DIR); \
           mkdir bin; \
-          mkdir data2;
+          mkdir data2; \
           cp -r data/* data2; \
 	  cd sources; \
 	  $(MAKE) \
