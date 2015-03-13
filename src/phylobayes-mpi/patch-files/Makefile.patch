@@ -1,0 +1,21 @@
+--- pb_mpi1.5a/sources/Makefile	2013-10-25 15:09:01.000000000 -0700
++++ patch-files/Makefile	2015-03-13 15:37:19.122410592 -0700
+@@ -41,7 +41,7 @@
+ ALL_SRCS=$(wildcard *.cpp)
+ ALL_OBJS=$(patsubst %.cpp,%.o,$(ALL_SRCS))
+ 
+-PROGSDIR=../data
++PROGSDIR=../bin
+ ALL= pb_mpi readpb_mpi tracecomp bpcomp bpcomp2
+ PROGS=$(addprefix $(PROGSDIR)/, $(ALL))
+ 
+@@ -90,5 +90,8 @@
+ 
+ clean:
+ 	-rm -f *.o *.d *.d.*
+-	-rm -f $(PROGS)
++	( \
++            cd ../data;\
++            rm $(ALL) \
++        )
+ 
