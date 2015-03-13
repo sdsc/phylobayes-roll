@@ -89,7 +89,7 @@ build: $(SRC_DIRS)
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
 	( \
-	  mkdir -p -m 755 $(ROOT)/$(PKGROOT)/data
+	  mkdir -p -m 755 $(ROOT)/$(PKGROOT)/data; \
 	  cd $(SOURCE_DIR); \
 	  cp bin/* $(ROOT)/$(PKGROOT)/bin; \
 	  cp -r data2/* $(ROOT)/$(PKGROOT)/data ; \
