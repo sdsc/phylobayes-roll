@@ -73,7 +73,6 @@ DESCRIPTION:
 
 
 build: $(SRC_DIRS)
-	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
 	patch $(SOURCE_DIR)/sources/Makefile patch-files/Makefile.patch
 	( \
 	  $(MODULE_LOAD_CXX); \
@@ -87,6 +86,7 @@ build: $(SRC_DIRS)
 	@echo "::: Package $(NAME) build complete :::"
 
 install::
+	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
 	( \
 	  cd $(SOURCE_DIR); \
 	  cp bin/* $(ROOT)/$(PKGROOT)/bin; \
