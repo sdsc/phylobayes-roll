@@ -79,7 +79,8 @@ build: $(SRC_DIRS)
 	  $(MODULE_LOAD_MPI); \
 	  cd $(SOURCE_DIR); \
           mkdir bin; \
-	  cp -r data $(ROOT)/$(PKGROOT) ; \
+          mkdir data2;
+          cp -r data/* data2; \
 	  cd sources; \
 	  $(MAKE) \
 	)
@@ -88,8 +89,10 @@ build: $(SRC_DIRS)
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
 	( \
+	  mkdir -p -m 755 $(ROOT)/$(PKGROOT)/data
 	  cd $(SOURCE_DIR); \
 	  cp bin/* $(ROOT)/$(PKGROOT)/bin; \
+	  cp -r data2/* $(ROOT)/$(PKGROOT)/data ; \
 	)
 	@echo "::: Package $(NAME) install complete :::"
 
