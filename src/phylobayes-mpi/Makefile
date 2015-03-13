@@ -73,23 +73,23 @@ DESCRIPTION:
 
 
 build: $(SRC_DIRS)
+	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
+	patch $(SOURCE_DIR)/sources/Makefile patch-files/Makefile.patch
 	( \
 	  $(MODULE_LOAD_CXX); \
 	  $(MODULE_LOAD_MPI); \
 	  cd $(SOURCE_DIR); \
-	  $(MAKE) -C sources clean; \
-	  $(MAKE) -C sources \
+          mkdir bin; \
+	  cp -r data $(ROOT)/$(PKGROOT) ; \
+	  cd sources; \
+	  $(MAKE) \
 	)
 	@echo "::: Package $(NAME) build complete :::"
 
 install::
-	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
 	( \
 	  cd $(SOURCE_DIR); \
 	  cp bin/* $(ROOT)/$(PKGROOT)/bin; \
-	  cp -r data $(ROOT)/$(PKGROOT)/ ; \
-	  cp README* $(ROOT)/$(PKGROOT); \
-	  cp -r *.txt $(ROOT)/$(PKGROOT) \
 	)
 	@echo "::: Package $(NAME) install complete :::"
 
