@@ -61,7 +61,6 @@ include Rules.mk
 include $(SDSCDEVEL)/Pull.mk
 include $(SDSCDEVEL)/Rules.mk
 
-$(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
 	$(MODULE_LOAD_CC); \
@@ -72,9 +71,6 @@ DESCRIPTION:
 	  $(DESCRIBE_MPI); \
 	) > $@
 
-LICENSE: $(SRC_DIRS)
-	$(CHECK_LICENSE_FILES)
-	echo GPLv3+ > $@
 
 build: $(SRC_DIRS)
 	( \
