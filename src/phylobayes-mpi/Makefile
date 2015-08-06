@@ -61,16 +61,20 @@ include Rules.mk
 include $(SDSCDEVEL)/Pull.mk
 include $(SDSCDEVEL)/Rules.mk
 
+$(NAME).spec: DESCRIPTION LICENSE
 
 DESCRIPTION:
-	$(MODULE_LOAD_CC); \
+	$(MODULE_LOAD_CXX); \
 	$(MODULE_LOAD_MPI); \
 	( \
 	  $(DESCRIBE_PKG); \
-	  $(DESCRIBE_CC); \
-	  $(DESCRIBE_MPI); \
+	  $(DESCRIBE_CXX); \
+	  $(DESCRIBE_MPI) \
 	) > $@
 
+LICENSE: $(SRC_DIRS)
+	$(CHECK_LICENSE_FILES)
+	echo GPLv3+ > $@
 
 build: $(SRC_DIRS)
 	patch $(SOURCE_DIR)/sources/Makefile patch-files/Makefile.patch
@@ -78,9 +82,9 @@ build: $(SRC_DIRS)
 	  $(MODULE_LOAD_CXX); \
 	  $(MODULE_LOAD_MPI); \
 	  cd $(SOURCE_DIR); \
-          mkdir bin; \
+	  mkdir bin; \
 	  cd sources; \
-          $(MAKE) clean; \
+	  $(MAKE) clean; \
 	  $(MAKE) \
 	)
 	@echo "::: Package $(NAME) build complete :::"
@@ -90,8 +94,9 @@ install::
 	( \
 	  cd $(SOURCE_DIR); \
 	  cp bin/* $(ROOT)/$(PKGROOT)/bin; \
-	  cp -r data $(ROOT)/$(PKGROOT); \
+	  cp -r data $(ROOT)/$(PKGROOT) \
 	)
+	$(INSTALL_LICENSE_FILES)
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::

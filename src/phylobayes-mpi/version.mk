@@ -8,9 +8,9 @@ ifndef ROLLMPI
 endif
 MPINAME := $(firstword $(subst /, ,$(ROLLMPI)))
 
-NAME           = sdsc-phylobayes-mpi_$(COMPILERNAME)_$(MPINAME)
+NAME           = sdsc-phylobayes-mpi
 VERSION        = 1.5a
-RELEASE        = 2
+RELEASE        = 3
 PKGROOT        = /opt/phylobayes
 
 SRC_SUBDIR     = phylobayes-mpi
