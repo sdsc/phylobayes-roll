@@ -10,7 +10,7 @@ MPINAME := $(firstword $(subst /, ,$(ROLLMPI)))
 
 NAME           = sdsc-phylobayes-mpi
 VERSION        = 1.5a
-RELEASE        = 4
+RELEASE        = 5
 PKGROOT        = /opt/phylobayes
 
 SRC_SUBDIR     = phylobayes-mpi

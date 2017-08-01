@@ -77,6 +77,8 @@ LICENSE: $(SRC_DIRS)
 
 build: $(SRC_DIRS)
 	patch $(SOURCE_DIR)/sources/Makefile patch-files/Makefile.patch
+	patch $(SOURCE_DIR)/sources/CodonSubMatrix.h patch-files/CodonSubMatrix.h.patch
+	patch $(SOURCE_DIR)/sources/Random.h patch-files/Random.h.patch
 	( \
 	  $(MODULE_LOAD_CXX); \
 	  $(MODULE_LOAD_MPI); \
