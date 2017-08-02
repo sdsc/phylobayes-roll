@@ -1,0 +1,24 @@
+--- Random.h	2017-08-01 09:04:36.000000000 -0700
++++ patch-files/Random.h	2017-08-01 09:02:04.000000000 -0700
+@@ -24,6 +24,12 @@
+ #include <iomanip>
+ #include <fstream>
+ 
++#if __cplusplus >= 201103L
++#define RANDOMCONST constexpr
++#else
++#define RANDOMCONST const
++#endif
++
+ #define MT_LEN       624
+ 
+ #define MT_IA           397
+@@ -50,7 +56,7 @@
+  
+ 	public:
+ 
+-	static const double INFPROB=250;
++	static RANDOMCONST double INFPROB=250;
+ 	
+   	Random(int seed = -1);
+ 

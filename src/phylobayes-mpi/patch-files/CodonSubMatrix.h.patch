@@ -1,0 +1,54 @@
+--- CodonSubMatrix.h	2017-08-01 09:04:47.000000000 -0700
++++ patch-files/CodonSubMatrix.h	2017-08-01 09:01:16.000000000 -0700
+@@ -19,6 +19,12 @@
+ #include "CodonStateSpace.h"
+ #include "SubMatrix.h"
+ 
++#if __cplusplus >= 201103L
++#define CODONCONST constexpr
++#else
++#define CODONCONST const
++#endif
++
+ class CodonSubMatrix : public SubMatrix	{
+ 
+ 	public:
+@@ -67,9 +73,9 @@
+ 	double GetRate();
+ 	double* aaprofile;
+ 
+-	static const double TOOSMALL = 1e-30;
+-	static const double TOOLARGE = 500;
+-	static const double TOOLARGENEGATIVE = -500;
++	static CODONCONST double TOOSMALL = 1e-30;
++	static CODONCONST double TOOLARGE = 500;
++	static CODONCONST double TOOLARGENEGATIVE = -500;
+ 
+ };
+ 
+@@ -95,9 +101,9 @@
+ 	double* codonprofile;
+ 	double* omega;
+ 
+-	static const double TOOSMALL = 1e-30;
+-	static const double TOOLARGE = 500;
+-	static const double TOOLARGENEGATIVE = -50;
++	static CODONCONST double TOOSMALL = 1e-30;
++	static CODONCONST double TOOLARGE = 500;
++	static CODONCONST double TOOLARGENEGATIVE = -50;
+ 
+ };
+ 
+@@ -118,9 +124,9 @@
+ 	double GetRate();
+ 	double* codonprofile;
+ 
+-	static const double TOOSMALL = 1e-30;
+-	static const double TOOLARGE = 500;
+-	static const double TOOLARGENEGATIVE = -50;
++	static CODONCONST double TOOSMALL = 1e-30;
++	static CODONCONST double TOOLARGE = 500;
++	static CODONCONST double TOOLARGENEGATIVE = -50;
+ 
+ };
+ 
