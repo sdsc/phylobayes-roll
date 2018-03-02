@@ -10,7 +10,7 @@ MPINAME := $(firstword $(subst /, ,$(ROLLMPI)))
 
 NAME           = sdsc-phylobayes-mpi
 VERSION        = 1.5a
-RELEASE        = 5
+RELEASE        = 6
 PKGROOT        = /opt/phylobayes
 
 SRC_SUBDIR     = phylobayes-mpi
@@ -23,4 +23,5 @@ SOURCE_DIR     = $(SOURCE_PKG:%.$(SOURCE_SUFFIX)=%)
 
 TAR_GZ_PKGS    = $(SOURCE_PKG)
 
-RPM.EXTRAS     = AutoReq:No
+RPM.EXTRAS     = AutoReq:No\nAutoProv:No
+RPM.PREFIX     = $(PKGROOT)
